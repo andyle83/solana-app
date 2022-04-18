@@ -20,6 +20,9 @@ Simple full stack app based on Solana blockchain
 - How to run
   + `anchor build` - build smart contract
   + `anchor test` - running JavaScript test script
+  + `anchor deploy` - deploy to local, make sure `solana-test-validator` is running
+  
+We can use `solana logs` command to view logs output
 
 **References**
 + https://dev.to/edge-and-node/the-complete-guide-to-full-stack-solana-development-with-react-anchor-rust-and-phantom-3291
