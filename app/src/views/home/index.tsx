@@ -8,18 +8,16 @@ export const HomeView: FC = ({ }) => {
     <div className="md:hero mx-auto p-4">
       <div className="md:hero-content flex flex-col">
         <h1 className="text-center text-5xl md:pl-12 font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195]">
-          Demo Application <span className='text-sm font-normal align-top text-slate-700'>v{pkg.version}</span>
+          Celo to Zero<span className='text-sm font-normal align-top text-slate-700'>v{pkg.version}</span>
         </h1>
-        <h4 className="md:w-full text-center text-slate-300 my-2">
-          <p>Simply the fastest way to get started.</p>
-          Next.js, tailwind, wallet, web3.js, and more.
-        </h4>
-        <div className="max-w-md mx-auto mockup-code bg-primary p-6 my-2">
-          <pre data-prefix=">">
-            <code className="truncate">Start building on Solana  </code>
-          </pre>
+        <div className="max-w-md mx-auto mockup-code bg-primary p-6 my-3">
+          <pre data-prefix="$"><code>anchor deploy</code></pre>
+          <pre data-prefix=">" className="text-info"><code>anchor build...</code></pre>
+          <pre data-prefix=">" className="text-warning"><code>anchor test...</code></pre>
+          <pre data-prefix=">" className="text-success"><code>Deploy success!</code></pre>
         </div>
         <div className="text-center">
+          <button className="btn btn-outline btn-secondary">Click to start</button>
         </div>
       </div>
     </div>
