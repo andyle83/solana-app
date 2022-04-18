@@ -1,3 +1,5 @@
+import base = Mocha.reporters.base;
+
 const assert = require("assert");
 import * as anchor from "@project-serum/anchor";
 import { Program } from "@project-serum/anchor";
@@ -35,6 +37,19 @@ describe("solana-app", () => {
     const account = await program.account.baseAccount.fetch(baseAccount.publicKey);
     console.log('Initial counter: ', account.count.toString())
     assert.ok(account.count.toString() == "2022");
+  })
+
+  it("Update counter with one unit", async() => {
+    const tx = await program.rpc.increment({
+      accounts: {
+        baseAccount: baseAccount.publicKey
+      }
+    });
+    console.log("Your update transaction signature: ", tx);
+    /* Fetch the account and check the value of count */
+    const account = await program.account.baseAccount.fetch(baseAccount.publicKey);
+    console.log('Update counter: ', account.count.toString())
+    assert.ok(account.count.toString() == "2023");
   })
 
 });
