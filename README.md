@@ -33,7 +33,11 @@ Simple full stack app based on Solana blockchain
 We can use `solana logs` command to view logs output
 
 **References**
-+ https://dev.to/edge-and-node/the-complete-guide-to-full-stack-solana-development-with-react-anchor-rust-and-phantom-3291
-+ https://github.com/solana-labs/dapp-scaffold
-+ https://nextjs.org/docs/advanced-features/custom-app
-+ https://github.com/kanav99/solana-boilerplate
++ Main sample
+  + https://dev.to/edge-and-node/the-complete-guide-to-full-stack-solana-development-with-react-anchor-rust-and-phantom-3291
++ Code base
+  + https://github.com/solana-labs/dapp-scaffold
+  + https://github.com/kanav99/solana-boilerplate
++ Study more
+  + https://nextjs.org/docs/advanced-features/custom-app
+  + https://nextjs.org/learn/foundations/from-react-to-nextjs
