@@ -1,9 +1,17 @@
 Simple full stack app based on Solana blockchain
 
 - Tech stack
-  + React with JavaScript
-  + Anchor framework
-  + Solana localhost network
+  - Blockchain layer
+    + Anchor framework
+    + Solana localhost network
+  - Frontend layer
+    + Next framework with React library (17.xxx)
+    + TypeScript language
+    + Tailwind CSS framework
+    + daisyUI: Tailwind CSS UI component library
+    + Immer: Immutable data structure for state management
+  - Backend layer - TBD
+  - Data layer (Oracle) - TBD
 
 - Install package
   + `Rust` compiler   :  `curl https://sh.rustup.rs -sSf | sh\n`
@@ -26,4 +34,4 @@ We can use `solana logs` command to view logs output
 
 **References**
 + https://dev.to/edge-and-node/the-complete-guide-to-full-stack-solana-development-with-react-anchor-rust-and-phantom-3291
-+ https://github.com/solana-labs/dapp-scaffold/blob/main/package.json
++ https://github.com/solana-labs/dapp-scaffold
