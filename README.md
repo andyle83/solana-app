@@ -41,3 +41,5 @@ We can use `solana logs` command to view logs output
 + Study more
   + https://nextjs.org/docs/advanced-features/custom-app
   + https://nextjs.org/learn/foundations/from-react-to-nextjs
++ Testing
+  + https://nextjs.org/docs/testing
