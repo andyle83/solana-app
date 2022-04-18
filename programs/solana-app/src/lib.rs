@@ -12,7 +12,7 @@ pub mod solana_app {
 
     pub fn create(ctx: Context<Create>) -> Result<()> {
         let base_account = &mut ctx.accounts.base_account;
-        base_account.count = 0;
+        base_account.count = 2022;
         Ok(())
     }
 
