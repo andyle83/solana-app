@@ -2,8 +2,10 @@ import { FC } from 'react';
 import Link from "next/link";
 
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import { useAutoConnect } from '../contexts/AutoConnectProvider';
 
 export const AppBar: FC = props => {
+  const { autoConnect, setAutoConnect } = useAutoConnect();
   return (
     <div>
 
@@ -70,7 +72,8 @@ export const AppBar: FC = props => {
               <li>
                 <div className="form-control">
                   <label className="cursor-pointer label">
-                    <input type="checkbox" checked={false} onChange={(e) => console.log('auto connect')} className="toggle" />
+                    <a>Auto connect</a>
+                    <input type="checkbox" checked={autoConnect} onChange={(e) => setAutoConnect(e.target.checked)} className="toggle" />
                   </label>
                 </div>
               </li>
