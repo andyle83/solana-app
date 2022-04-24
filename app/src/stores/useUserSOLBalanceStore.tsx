@@ -19,9 +19,9 @@ const useUserSOLBalanceStore = create<UserSOLBalanceStore>((set, _get) => ({
     } catch (e) {
       console.log(`error getting balance: `, e);
     }
-    set((s) => {
+
+    set(s => {
       s.balance = balance;
-      console.log(`balance updated, `, balance);
     })
   },
 }));
