@@ -1,13 +1,16 @@
-import { WalletError } from '@solana/wallet-adapter-base';
+import { WalletError, WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletModalProvider as ReactUIWalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import {PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
+import { clusterApiUrl } from '@solana/web3.js';
 import { FC, ReactNode, useCallback, useMemo } from 'react';
 import { AutoConnectProvider, useAutoConnect } from './AutoConnectProvider';
 
 const WalletContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const { autoConnect } = useAutoConnect();
-  const endpoint = 'http://127.0.0.1:8899';
+  // const endpoint = 'http://127.0.0.1:8899';
+  const network = WalletAdapterNetwork.Devnet;
+  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
   const wallets = useMemo(() => [ new PhantomWalletAdapter() ], [endpoint]);
 
   const onError = useCallback(
