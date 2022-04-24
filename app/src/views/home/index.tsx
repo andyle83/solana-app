@@ -29,7 +29,6 @@ export const HomeView: FC = ({ }) => {
     // TODO: idl type check issue
     // @ts-ignore
     const program = new Program(idl, programID, provider);
-    console.log(`rpc with program id: ${programID}`);
 
     try {
       // noinspection JSDeprecatedSymbols
@@ -41,10 +40,9 @@ export const HomeView: FC = ({ }) => {
         },
         signers: [baseAccount]
       });
-      console.log("transaction signature: ", tx);
 
       const account = await program.account.baseAccount.fetch(baseAccount.publicKey);
-      console.log('account: ', account);
+      console.log('counter: ', account.count.toString())
 
     } catch (err) {
       console.log("transaction error: ", err);
@@ -72,12 +70,16 @@ export const HomeView: FC = ({ }) => {
         <div className="stats shadow text-center">
           <div className="stat">
             <div className="stat-title">Current balance</div>
-            <div className="stat-value">{balance} (sol)</div>
+            <div className="stat-value text-secondary">{balance}</div>
             <div className="stat-desc">You pay if you click on below button</div>
           </div>
         </div>
         <div className="text-center">
-          <button className="btn btn-outline btn-secondary" onClick={initData}>RPC Invoke</button>
+          <div className="btn-group">
+            <button className="btn btn-primary" onClick={initData}>Counter</button>
+            <button className="btn btn-primary" onClick={initData}>Increase</button>
+            <button className="btn btn-primary" onClick={initData}>Decrease</button>
+          </div>
         </div>
       </div>
     </div>
