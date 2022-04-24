@@ -48,8 +48,8 @@
 
 ### Application screenshot
 
-[[/demo_img/1.png|Home Page Screen with Fantom Wallet Connected]]
-[[/demo_img/2.png|Calling RPC to get counter's value]]
+![Home Page Screen with Fantom Wallet Connected](https://github.com/andyle83/solana-app/tree/main/demo_img/1.png)
+![Calling RPC to get counter's value](https://github.com/andyle83/solana-app/tree/main/demo_img/2.png)
 
 ### References
 + Document
