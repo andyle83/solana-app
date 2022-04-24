@@ -1,4 +1,4 @@
-Simple full stack app based on Solana blockchain
+A Simple fullstack app based on Solana blockchain
 
 - Tech stack
   - Blockchain layer
@@ -45,13 +45,15 @@ Simple full stack app based on Solana blockchain
       + `anchor deploy` - deploy to local, make sure `solana-test-validator` is running
       
 **References**
-+ Main sample
-  + https://dev.to/edge-and-node/the-complete-guide-to-full-stack-solana-development-with-react-anchor-rust-and-phantom-3291
++ Document
+  + [Solana Fullstack development](https://dev.to/edge-and-node/the-complete-guide-to-full-stack-solana-development-with-react-anchor-rust-and-phantom-3291)
+  + [Starting with Solana](https://imfeld.dev/writing/starting_with_solana_part01)
+  + [Building a blog on Solana with Anchor](https://dev.to/findiglay/building-a-blog-on-solana-2pg8)
+  + [Understanding Program Derived Addresses](https://www.brianfriel.xyz/understanding-program-derived-addresses/)
 + Code base
-  + https://github.com/solana-labs/dapp-scaffold
-  + https://github.com/kanav99/solana-boilerplate
+  + [dApp Scaffold](https://github.com/solana-labs/dapp-scaffold)
+  + [Solana React Boilerplate](https://github.com/kanav99/solana-boilerplate)
 + Study more
-  + https://nextjs.org/docs/advanced-features/custom-app
-  + https://nextjs.org/learn/foundations/from-react-to-nextjs
-+ Testing
-  + https://nextjs.org/docs/testing
+  + [NextJS Advanced](https://nextjs.org/docs/advanced-features/custom-app)
+  + [NextJS Foundation](https://nextjs.org/learn/foundations/from-react-to-nextjs)
+  + [NextJS Testing](https://nextjs.org/docs/testing)
