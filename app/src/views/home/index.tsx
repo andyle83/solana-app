@@ -3,6 +3,10 @@ import { FC, useEffect } from 'react';
 
 // Wallet
 import { useWallet, useConnection } from '@solana/wallet-adapter-react';
+import { AnchorProvider, Program, web3, Idl } from '@project-serum/anchor';
+import { PublicKey } from '@solana/web3.js';
+
+import idl from '../../../solana_app.json';
 
 // Store
 import useUserSOLBalanceStore from '../../stores/useUserSOLBalanceStore';
@@ -16,6 +20,33 @@ export const HomeView: FC = ({ }) => {
 
   const balance = useUserSOLBalanceStore((s) => s.balance)
   const { getUserSOLBalance } = useUserSOLBalanceStore()
+
+  const getInitData = async () => {
+    const { SystemProgram, Keypair } = web3;
+    const baseAccount = Keypair.generate();
+    const programID = new PublicKey(idl.metadata.address);
+    const provider = new AnchorProvider(connection, wallet, AnchorProvider.defaultOptions());
+    // TODO: idl type check issue
+    const program = new Program(idl, programID, provider);
+    console.log(`RPC with ${programID}`);
+
+    try {
+      /* interact with the program via rpc */
+      await program.rpc.create({
+        accounts: {
+          baseAccount: baseAccount.publicKey,
+          user: provider.wallet.publicKey,
+          systemProgram: SystemProgram.programId,
+        },
+        signers: [baseAccount]
+      });
+
+      const account = await program.account.baseAccount.fetch(baseAccount.publicKey);
+      console.log('account: ', account);
+    } catch (err) {
+      console.log("transaction error: ", err);
+    }
+  }
 
   useEffect(() => {
     if (wallet.publicKey) {
@@ -37,6 +68,7 @@ export const HomeView: FC = ({ }) => {
         </div>
         <div className="text-center">
           <button className="btn btn-outline btn-secondary">Your Sol: {balance}</button>
+          <button className="btn btn-outline btn-secondary" onClick={() => getInitData()}>Get Initial Data</button>
         </div>
       </div>
     </div>
