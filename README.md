@@ -48,8 +48,17 @@
 
 ### Application screenshot
 
-![Home Page Screen with Fantom Wallet Connected](https://github.com/andyle83/solana-app/tree/main/demo_img/1.png)
-![Calling RPC to get counter's value](https://github.com/andyle83/solana-app/tree/main/demo_img/2.png)
+- Home Page Screen with Fantom Wallet Connected
+
+![Home Page Screen with Fantom Wallet Connected](https://raw.githubusercontent.com/andyle83/solana-app/main/demo_img/1.png)
+
+- Calling smart contract to get counter's value
+
+![Calling RPC to get counter's value](https://raw.githubusercontent.com/andyle83/solana-app/main/demo_img/2.png)
+
+**Note** 
+
+Smart contract address: (`Program ID`): `77iNmGEeh3ks2XSkGCaHeYeePhNGn1Dei2CEMkAssFx9`
 
 ### References
 + Document
