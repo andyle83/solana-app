@@ -14,11 +14,12 @@
   - Data layer (Oracle) - TBD
 
 ### Prerequisite (required packages)
-    + `Rust` compiler   :  `curl https://sh.rustup.rs -sSf | sh\n`
-    + `Solana`tool suit : `sh -c "$(curl -sSfL https://release.solana.com/v1.10.8/install)"`
-    + `Anchor` version manager: `cargo install --git https://github.com/project-serum/anchor avm --locked --force
-      `
-    + `Anchor` framework: 
+
+  - Rust compiler   :  `curl https://sh.rustup.rs -sSf | sh\n`
+  - Solana tool suit : `sh -c "$(curl -sSfL https://release.solana.com/v1.10.8/install)"`
+  - Anchor version manager: `cargo install --git https://github.com/project-serum/anchor avm --locked --force
+`
+  - `Anchor` framework: 
 
       ```
       avm install latest
@@ -26,20 +27,21 @@
       ```
 
 ### How to run
-    + Solana provides some network (localhost, devnet etc..). I suggest to use `devnet` for development / testing because i found some issue in `localhost` with `fetch`
-    + Using command to switch between network:
+
+  - Solana provides some network (localhost, devnet etc..). I suggest to use `devnet` for development / testing because i found some issue in `localhost` with `fetch`
+  - Using command to switch between network:
       + `solana config set --url localhost`
-      + `solana config set --url devnet`
-    + Checking current address and balance
+      + `solana config set --url devnet` 
+  - Checking current address and balance
       + `solana address`
       + `solana balance [address]` ( if you want to deploy smart contract, make sure you have enough balance)
       + `solana airdrop 1 [address]` to get more solana in your devnet wallet
       + `solana logs`: get logs from network (localhost / devnet)
-    + Deployment
+  - Deployment
       + Getting program id: `solana address -k target/deploy/...-keypair.json`
       + Update `lib.rs` and `Anchor.toml` with program id
       + Switch Fantom wallet to the `devnet` network
-      + Run few anchor command to build / test and deploy
+      + Run anchor commands to build / test and deploy
         + `anchor build` - build smart contract
         + `anchor test` - running JavaScript test script
         + `anchor deploy` - deploy to local, make sure `solana-test-validator` is running
