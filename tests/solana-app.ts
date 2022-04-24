@@ -8,12 +8,8 @@ import { SolanaApp } from "../target/types/solana_app";
 
 describe("solana-app", () => {
   const provider = anchor.AnchorProvider.local();
-
-  // Configure the client to use the local cluster.
   anchor.setProvider(provider);
-
   const program = anchor.workspace.SolanaApp as Program<SolanaApp>;
-
   const baseAccount = anchor.web3.Keypair.generate();
 
   it("Is initialized!", async () => {
@@ -46,6 +42,7 @@ describe("solana-app", () => {
       }
     });
     console.log("Your update transaction signature: ", tx);
+
     /* Fetch the account and check the value of count */
     const account = await program.account.baseAccount.fetch(baseAccount.publicKey);
     console.log('Update counter: ', account.count.toString())
