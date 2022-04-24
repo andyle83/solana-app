@@ -33,6 +33,7 @@ Simple full stack app based on Solana blockchain
   + Checking current address and balance
     + `solana address`
     + `solana balance [address]` ( if you want to deploy smart contract, make sure you have enough balance)
+    + `solana airdrop 1 [address]` to get more solana in your devnet wallet
     + `solana logs`: get logs from network (localhost / devnet)
   + Deployment
     + Getting program id: `solana address -k target/deploy/...-keypair.json`
