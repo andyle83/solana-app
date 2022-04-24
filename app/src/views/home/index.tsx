@@ -66,9 +66,15 @@ export const HomeView: FC = ({ }) => {
           <pre data-prefix=">" className="text-warning"><code>anchor test...</code></pre>
           <pre data-prefix=">" className="text-success"><code>Deploy success!</code></pre>
         </div>
+        <div className="stats shadow text-center">
+          <div className="stat">
+            <div className="stat-title">Current balance</div>
+            <div className="stat-value">{balance} (sol)</div>
+            <div className="stat-desc">You pay if you click on below button</div>
+          </div>
+        </div>
         <div className="text-center">
-          <button className="btn btn-outline btn-secondary">Your Sol: {balance}</button>
-          <button className="btn btn-outline btn-secondary" onClick={() => getInitData()}>Get Initial Data</button>
+          <button className="btn btn-outline btn-secondary" onClick={() => getInitData()}>RPC Invoke</button>
         </div>
       </div>
     </div>
