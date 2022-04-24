@@ -29,12 +29,11 @@ export const HomeView: FC = ({ }) => {
     // TODO: idl type check issue
     // @ts-ignore
     const program = new Program(idl, programID, provider);
-    console.log(`RPC with ${programID}`);
+    console.log(`rpc with program id: ${programID}`);
 
     try {
-      /* interact with the program via rpc */
       // noinspection JSDeprecatedSymbols
-      await program.rpc.create({
+      const tx = await program.rpc.create({
         accounts: {
           baseAccount: baseAccount.publicKey,
           user: provider.wallet.publicKey,
@@ -42,9 +41,11 @@ export const HomeView: FC = ({ }) => {
         },
         signers: [baseAccount]
       });
+      console.log("transaction signature: ", tx);
 
       const account = await program.account.baseAccount.fetch(baseAccount.publicKey);
       console.log('account: ', account);
+
     } catch (err) {
       console.log("transaction error: ", err);
     }
