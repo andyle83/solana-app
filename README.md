@@ -45,7 +45,12 @@
         + `anchor build` - build smart contract
         + `anchor test` - running JavaScript test script
         + `anchor deploy` - deploy to local, make sure `solana-test-validator` is running
-      
+
+### Application screenshot
+
+[[/demo_img/1.png|Home Page Screen with Fantom Wallet Connected]]
+[[/demo_img/2.png|Calling RPC to get counter's value]]
+
 ### References
 + Document
   + [Solana Fullstack development](https://dev.to/edge-and-node/the-complete-guide-to-full-stack-solana-development-with-react-anchor-rust-and-phantom-3291)
