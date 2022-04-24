@@ -21,17 +21,19 @@ export const HomeView: FC = ({ }) => {
   const balance = useUserSOLBalanceStore((s) => s.balance)
   const { getUserSOLBalance } = useUserSOLBalanceStore()
 
-  const getInitData = async () => {
+  const initData = async () => {
     const { SystemProgram, Keypair } = web3;
     const baseAccount = Keypair.generate();
     const programID = new PublicKey(idl.metadata.address);
     const provider = new AnchorProvider(connection, wallet, AnchorProvider.defaultOptions());
     // TODO: idl type check issue
+    // @ts-ignore
     const program = new Program(idl, programID, provider);
     console.log(`RPC with ${programID}`);
 
     try {
       /* interact with the program via rpc */
+      // noinspection JSDeprecatedSymbols
       await program.rpc.create({
         accounts: {
           baseAccount: baseAccount.publicKey,
@@ -74,7 +76,7 @@ export const HomeView: FC = ({ }) => {
           </div>
         </div>
         <div className="text-center">
-          <button className="btn btn-outline btn-secondary" onClick={() => getInitData()}>RPC Invoke</button>
+          <button className="btn btn-outline btn-secondary" onClick={initData}>RPC Invoke</button>
         </div>
       </div>
     </div>
