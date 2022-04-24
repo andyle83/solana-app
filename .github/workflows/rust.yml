@@ -1,4 +1,4 @@
-name: Rust
+name: Build and check smart contract
 on:
   push:
     branches: [main]
