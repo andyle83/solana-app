@@ -8,14 +8,12 @@ import { AutoConnectProvider, useAutoConnect } from './AutoConnectProvider';
 const WalletContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const { autoConnect } = useAutoConnect();
   const endpoint = 'http://127.0.0.1:8899';
-
   const wallets = useMemo(() => [ new PhantomWalletAdapter() ], [endpoint]);
 
   const onError = useCallback(
     (error: WalletError) => {
       console.error(error);
-    },
-    []
+    }, []
   );
 
   return (
