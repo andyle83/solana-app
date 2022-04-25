@@ -55,7 +55,7 @@
 
 ### How to run
 
-  - Solana provides some network (localhost, devnet etc..). I suggest to use `devnet` for development / testing because i found some issue in `localhost` with `fetch`
+  - Solana provides some network (localhost, devnet, mainnet beta..). I suggest to use `devnet` for development / testing because i found some issue in `localhost` with `fetch`
   - Using command to switch between network:
       + `solana config set --url localhost`
       + `solana config set --url devnet` 
