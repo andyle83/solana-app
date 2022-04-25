@@ -26,6 +26,30 @@
       avm use latest
       ```
 
+### Foundation
+
+  - Solana project structure
+    - `app`: front-end code
+    - `programs`: solana program
+    - `test`: javascript / typescript test for solana program
+    - `migration`: basic deploy script
+
+  - `lib.rs` structure
+    - `declare_id!("77iNmGEeh3ks2XSkGCaHeYeePhNGn1Dei2CEMkAssFx9");`: program address
+    - `#[program]`: define program that handle logic via set of **instruction handler** function (RPC handler). For example:
+      - `pub fn create(ctx: Context<Create>) -> Result<()> {}`
+      - `pub fn increment(ctx: Context<Increment>) -> Result<()>`
+    - `Context`: always first param in method, is simple container over transaction instruction
+    - `#[derive(Accounts)]`: define **transaction instruction**. For example:
+      - `pub struct Create<'info>`
+      - `pub struct Initialize {}`
+      - `pub struct Increment<'info>`
+    - `BaseAccount`: data structure that will be passed to transaction instruction
+    - Inside each transaction instruction, we may have three parameters
+      - `base_account`
+      - `user`
+      - `system_program`
+
 ### How to run
 
   - Solana provides some network (localhost, devnet etc..). I suggest to use `devnet` for development / testing because i found some issue in `localhost` with `fetch`
@@ -56,6 +80,10 @@
 
 ![Calling RPC to get counter's value](https://raw.githubusercontent.com/andyle83/solana-app/main/demo_img/2.png)
 
+### Issues
+
+- Failed to setup Jest in React App (compatible issue ?)
+
 **Note** 
 
 Smart contract address: (`Program ID`): `77iNmGEeh3ks2XSkGCaHeYeePhNGn1Dei2CEMkAssFx9`
@@ -66,6 +94,7 @@ Smart contract address: (`Program ID`): `77iNmGEeh3ks2XSkGCaHeYeePhNGn1Dei2CEMkA
   + [Starting with Solana](https://imfeld.dev/writing/starting_with_solana_part01)
   + [Building a blog on Solana with Anchor](https://dev.to/findiglay/building-a-blog-on-solana-2pg8)
   + [Understanding Program Derived Addresses](https://www.brianfriel.xyz/understanding-program-derived-addresses/)
+  + [Solana Programming Model](https://docs.solana.com/developing/programming-model/overview)
 + Code base
   + [dApp Scaffold](https://github.com/solana-labs/dapp-scaffold)
   + [Solana React Boilerplate](https://github.com/kanav99/solana-boilerplate)
