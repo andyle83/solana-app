@@ -46,9 +46,12 @@
       - `pub struct Increment<'info>`
     - `BaseAccount`: data structure - **Solana Account** that will be passed to transaction instruction. This struct is working as an OS file that storing data between **Transaction**
     - Inside each transaction instruction, we may have three parameters
-      - `base_account`
-      - `user`
-      - `system_program`
+      - `base_account`: with `#[account(init, payer = user, space = 8 + 8)]`
+        - `init`: telling Anchor should create an account responding to `BaseAccount` structure
+        - `payer`: indicate which account provide the token (lamports) to pay for newly created account rent. It's `user` account list next!
+        - `space`: number of bytes required to store the account's data
+      - `user`: account to pay fee for renting fee, it is owner that has authorized the transaction
+      - `system_program`: solana system program provides various services, such as creating account, transfer lamports etc.
 
 ### How to run
 
