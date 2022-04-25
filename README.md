@@ -35,7 +35,7 @@
     - `migration`: basic deploy script
 
   - `lib.rs` structure
-    - `declare_id!("77iNmGEeh3ks2XSkGCaHeYeePhNGn1Dei2CEMkAssFx9");`: program address
+    - `declare_id!("77iNmGEeh3ks2XSkGCaHeYeePhNGn1Dei2CEMkAssFx9");`: program address. Program execution begin with a transaction submitted to the **cluster**, transaction may include one or more **instructions**.
     - `#[program]`: define program that handle logic via set of **instruction handler** function (RPC handler). For example:
       - `pub fn create(ctx: Context<Create>) -> Result<()> {}`
       - `pub fn increment(ctx: Context<Increment>) -> Result<()>`
@@ -44,7 +44,7 @@
       - `pub struct Create<'info>`
       - `pub struct Initialize {}`
       - `pub struct Increment<'info>`
-    - `BaseAccount`: data structure that will be passed to transaction instruction
+    - `BaseAccount`: data structure - **Solana Account** that will be passed to transaction instruction. This struct is working as an OS file that storing data between **Transaction**
     - Inside each transaction instruction, we may have three parameters
       - `base_account`
       - `user`
@@ -86,7 +86,7 @@
 
 **Note** 
 
-Smart contract address: (`Program ID`): `77iNmGEeh3ks2XSkGCaHeYeePhNGn1Dei2CEMkAssFx9`
+Smart contract address -`Program ID`: `77iNmGEeh3ks2XSkGCaHeYeePhNGn1Dei2CEMkAssFx9`
 
 ### References
 + Document
