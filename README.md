@@ -95,6 +95,7 @@ Smart contract address -`Program ID`: `77iNmGEeh3ks2XSkGCaHeYeePhNGn1Dei2CEMkAss
   + [Building a blog on Solana with Anchor](https://dev.to/findiglay/building-a-blog-on-solana-2pg8)
   + [Understanding Program Derived Addresses](https://www.brianfriel.xyz/understanding-program-derived-addresses/)
   + [Solana Programming Model](https://docs.solana.com/developing/programming-model/overview)
+  + [Solana Terminologies](https://docs.solana.com/terminology)
 + Code base
   + [dApp Scaffold](https://github.com/solana-labs/dapp-scaffold)
   + [Solana React Boilerplate](https://github.com/kanav99/solana-boilerplate)
