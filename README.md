@@ -100,6 +100,7 @@ Smart contract address -`Program ID`: `77iNmGEeh3ks2XSkGCaHeYeePhNGn1Dei2CEMkAss
   + [Solana Programming Model](https://docs.solana.com/developing/programming-model/overview)
   + [Solana Terminologies](https://docs.solana.com/terminology)
   + [Introduce to the Solana blockchain](https://2501babe.github.io/posts/solana101.html)
+  + [Learning how to build on Solana](https://www.brianfriel.xyz/learning-how-to-build-on-solana/)
 + Code base
   + [dApp Scaffold](https://github.com/solana-labs/dapp-scaffold)
   + [Solana React Boilerplate](https://github.com/kanav99/solana-boilerplate)
