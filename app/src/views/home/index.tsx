@@ -1,5 +1,5 @@
 // Next, React
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 // Wallet
 import { useWallet, useConnection } from '@solana/wallet-adapter-react';
@@ -17,9 +17,9 @@ export const HomeView: FC = ({ }) => {
 
   const wallet = useWallet();
   const { connection } = useConnection();
-
   const balance = useUserSOLBalanceStore((s) => s.balance)
   const { getUserSOLBalance } = useUserSOLBalanceStore()
+  const [counter, setCounter] = useState(0);
 
   const initData = async () => {
     const { SystemProgram, Keypair } = web3;
@@ -42,7 +42,7 @@ export const HomeView: FC = ({ }) => {
       });
 
       const account = await program.account.baseAccount.fetch(baseAccount.publicKey);
-      console.log('counter: ', account.count.toString())
+      setCounter(parseInt(account.count.toString()));
 
     } catch (err) {
       console.log("transaction error: ", err);
@@ -70,8 +70,8 @@ export const HomeView: FC = ({ }) => {
         <div className="stats shadow text-center">
           <div className="stat">
             <div className="stat-title">Current balance</div>
-            <div className="stat-value text-secondary">{balance}</div>
-            <div className="stat-desc">You pay if you click on below button</div>
+            <div className="stat-value text-info">{balance}</div>
+            <div className="stat-desc text-secondary">{counter == 0 ? "Click button to get counter" : `Current counter: ${counter}`}</div>
           </div>
         </div>
         <div className="text-center">
