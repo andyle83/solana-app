@@ -75,7 +75,7 @@ export const HomeView: FC = ({ }) => {
           </div>
         </div>
         <div className="text-center">
-          <div className="btn-group">
+          <div className="btn-group inline-flex">
             <button className="btn btn-primary" onClick={initData}>Counter</button>
             <button className="btn btn-primary" onClick={initData}>Increase</button>
             <button className="btn btn-primary" onClick={initData}>Decrease</button>
