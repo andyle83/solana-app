@@ -1,4 +1,4 @@
-## A Simple fullstack app based on Solana blockchain
+## Fullstack app on Solana
 
 ### Tech stack
   - Blockchain layer
